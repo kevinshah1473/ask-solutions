@@ -1,0 +1,1338 @@
+/* ASK SOLUTIONS - Luxury Blue Financial Advisor Stylesheet */
+/* High Performance, Zero-Lag, Hardware-Accelerated CSS */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --primary-navy: #051329;
+  --primary-navy-dark: #030a16;
+  --navy-surface: #0a1f42;
+  --navy-card: #0e2b5c;
+  --brand-blue: #2563eb;
+  --brand-blue-dark: #1d4ed8;
+  --brand-blue-deep: #1e40af;
+  --brand-cyan: #0284c7;
+  --brand-cyan-light: #38bdf8;
+  --brand-sky: #0ea5e9;
+  --brand-sky-light: #7dd3fc;
+  --brand-ice: #e0f2fe;
+  --accent-blue-glow: #60a5fa;
+  --text-main: #0b192c;
+  --text-muted: #64748b;
+  --bg-light: #f4f8fc;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: #f4f8fc;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Blue Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Background Grids & Blue Mesh (Optimized with GPU containment) */
+.bg-mesh-dark {
+  background-color: #040e1f;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(14, 165, 233, 0.22) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(37, 99, 235, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(2, 132, 199, 0.20) 0px, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+  contain: paint;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glassmorphism Classes in Blue Shades */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 234, 254, 0.9);
+}
+
+.glass-dark {
+  background: rgba(10, 31, 66, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 197, 253, 0.15);
+}
+
+.glass-card-navy {
+  background: linear-gradient(135deg, rgba(14, 43, 92, 0.95) 0%, rgba(5, 19, 41, 0.98) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Glowing Border Gradients in Blue Shades */
+.border-gradient-glow {
+  position: relative;
+  border-radius: 1.5rem;
+}
+.border-gradient-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1.55rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.65), rgba(37, 99, 235, 0.6), rgba(14, 165, 233, 0.65));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Gradients in Blue Tones */
+.gradient-navy {
+  background: linear-gradient(135deg, #051329 0%, #0e2b5c 100%);
+}
+
+.gradient-blue-royal {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0284c7 100%);
+}
+
+.gradient-blue-sky {
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%);
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #1d4ed8 100%);
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-sky {
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-brand {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 60%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav Links Styling */
+header nav {
+  flex-wrap: nowrap !important;
+}
+header nav a,
+header nav span {
+  white-space: nowrap !important;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+  white-space: nowrap !important;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 9999px;
+}
+.nav-link:hover::after {
+  width: calc(100% - 1rem);
+}
+.nav-link:hover {
+  color: #2563eb;
+}
+
+/* Product Cards & 3D Interactive Hover (Hardware Accelerated) */
+.product-card {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.product-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 16px 30px -8px rgba(37, 99, 235, 0.15), 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+.product-card-icon {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.product-card:hover .product-card-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* Category Filter Buttons */
+.filter-btn {
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.filter-btn.active {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
+/* Shimmer Button Animation in Blue Shades */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.btn-shimmer {
+  background: linear-gradient(90deg, #1d4ed8 0%, #38bdf8 50%, #1d4ed8 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-shimmer-orange, .btn-shimmer-blue {
+  background: linear-gradient(90deg, #0284c7 0%, #60a5fa 50%, #0284c7 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Range Slider Styles in Blue */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: #dbeafe;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+  transition: transform 0.15s ease-in-out, background-color 0.2s;
+  border: 3px solid #ffffff;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #1d4ed8;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+  border: 3px solid #ffffff;
+}
+
+/* Pulse Glow (GPU Composited) in Blue */
+@keyframes pulseBlue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+  }
+}
+.pulse-whatsapp {
+  animation: pulseBlue 2.5s infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes pulseSky {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+  }
+}
+.pulse-gold, .pulse-sky {
+  animation: pulseSky 3s infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Floating Action Buttons */
+.fab-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fab-call {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 40;
+}
+
+/* Accordion Transition */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  will-change: max-height;
+}
+.accordion-content.active {
+  max-height: 800px;
+  transition: max-height 0.4s ease-in;
+}
+
+/* Stat Box & Single-Line Number Formatting */
+.stat-box {
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+.stat-box:hover {
+  transform: translate3d(0, -3px, 0);
+}
+.stat-number {
+  white-space: nowrap !important;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+/* Float Keyframe (Hardware-Accelerated 3D Transforms) */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+.float-element {
+  animation: floatGentle 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Infinite Marquee Animation for Partners (Zero-Jank GPU scroll) */
+@keyframes marqueeLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 30s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Modal Overlay & Box (Top-Level z-index & smooth fade) */
+.modal-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+}
+.modal-overlay.active,
+.modal-overlay.opacity-100 {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  transform: scale(0.95) translate3d(0, 15px, 0);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+.modal-overlay.active .modal-box,
+.modal-overlay.opacity-100 .modal-box {
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+/* Trust Pill Tag */
+.trust-pill {
+  backdrop-filter: blur(8px);
+  background: rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+}
+
+/* ============================================================ */
+/* PERFORMANCE OPTIMIZATIONS: Zero-Lag & 60FPS Rendering Rules */
+/* ============================================================ */
+#about,
+#services,
+#partners,
+#calculators,
+#why-us,
+#reviews,
+#branches,
+#faq,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* GPU hardware compositing on interactive containers */
+.glass-panel,
+.glass-dark,
+.glass-card-navy,
+.product-card,
+.stat-box,
+.btn-shimmer,
+.btn-shimmer-orange,
+.btn-shimmer-blue {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Print Optimization */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ============================================================ */
+/* HEADER NAVIGATION: Strict Single-Line Desktop Bar Enforcement */
+/* ============================================================ */
+header nav {
+  display: flex;
+  flex-wrap: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+header nav a,
+header nav span,
+header nav .nav-link {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* ============================================================ */
+/* LUXURY ANIMATION & TRANSITION SUITE (60FPS GPU ACCELERATED) */
+/* ============================================================ */
+
+/* 1. Scroll Reveal Animations (Slow & Luxurious) */
+.reveal,
+.reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translate3d(-35px, 0, 0);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translate3d(35px, 0, 0);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92) translate3d(0, 20px, 0);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed,
+.reveal-up.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Stagger Delays for Grid and Card Children */
+.stagger-1 { transition-delay: 0.10s; }
+.stagger-2 { transition-delay: 0.20s; }
+.stagger-3 { transition-delay: 0.30s; }
+.stagger-4 { transition-delay: 0.40s; }
+.stagger-5 { transition-delay: 0.50s; }
+.stagger-6 { transition-delay: 0.60s; }
+
+/* 2. Hero Elements Smooth Entry Keyframe */
+@keyframes heroEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-animate-1 { animation: heroEntrance 1.0s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-animate-2 { animation: heroEntrance 1.2s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-animate-3 { animation: heroEntrance 1.4s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* 3. Luxury Floating Ambient Elements */
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10px, 10px, 0) scale(0.96);
+  }
+}
+
+.float-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 4. Enhanced Interactive Card Elevation & Glow */
+.card-hover-effect,
+.feature-card,
+.review-card,
+.partner-card,
+.branch-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+  will-change: transform, box-shadow;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.card-hover-effect:hover,
+.feature-card:hover,
+.review-card:hover,
+.partner-card:hover,
+.branch-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 18px 32px -8px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+/* Icon Micro-Interaction on Hover */
+.icon-hover-rotate {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.group:hover .icon-hover-rotate {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* 5. Smooth Button Micro-Interactions */
+button:active,
+a.btn-shimmer:active,
+.btn-action:active {
+  transform: scale(0.97) !important;
+}
+
+/* 6. Glowing Pulse for Status & Trust Badges */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0);
+  }
+}
+
+.badge-glow {
+  animation: glowPulse 3.5s infinite;
+}
+
+/* 7. Button Ripple Effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.btn-ripple .ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleAnimation 0.65s linear;
+  background-color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+/* 8. Desktop Dropdown Menu Animation */
+.group:hover > div[class*="group-hover:opacity-100"],
+.group:focus-within > div[class*="group-hover:opacity-100"] {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* 9. Modern CSS View Transitions API (Calm & Slower Cross-Page Transitions) */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 600ms cubic-bezier(0.25, 1, 0.5, 1) both fadeOutPage;
+}
+
+::view-transition-new(root) {
+  animation: 850ms cubic-bezier(0.25, 1, 0.5, 1) 100ms both fadeInPage;
+}
+
+@keyframes fadeOutPage {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0) scale(0.99);
+  }
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* 10. Smooth Section Target Highlight Transition (2.5s Gentle Dissolve) */
+:target,
+.is-targeted-section {
+  scroll-margin-top: 5.5rem;
+  animation: sectionTargetGlow 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sectionTargetGlow {
+  0% {
+    box-shadow: inset 0 0 0 2px rgba(37, 99, 235, 0.55), 0 0 35px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.25), 0 0 18px rgba(56, 189, 248, 0.15);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+/* 11. Top Page Scroll Progress Indicator */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #2563eb 0%, #0284c7 35%, #38bdf8 70%, #60a5fa 100%);
+  z-index: 99999;
+  width: 0%;
+  transition: width 0.15s ease-out;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+  pointer-events: none;
+}
+
+/* 12. Quick-Jump Section Navigation Pills Active State Transition */
+.section-jump-pill {
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-jump-pill.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 13. Smooth Section Dividers & Lighting */
+.section-glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.3) 50%, transparent 100%);
+  width: 100%;
+}
+
+/* ============================================================ */
+/* 14. DISTINCT SIGNATURE TRANSITION SUITE FOR EVERY PAGE       */
+/* Slow, Smooth, Hardware-Accelerated Cinematic Aesthetics     */
+/* ============================================================ */
+
+/* --- PAGE 1: HOME (Grand Ambient Scale & Soft Radial Bloom) --- */
+body.page-home > section:first-of-type {
+  animation: pageHomeEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+@keyframes pageHomeEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* --- PAGE 2: ABOUT (Executive Lateral Glide & Lens Blur Dissolve) --- */
+body.page-about > section:first-of-type {
+  animation: pageAboutEntrance 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+@keyframes pageAboutEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(-35px, 0, 0);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+  }
+}
+body.page-about #founder img {
+  animation: aboutPortraitGlide 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+@keyframes aboutPortraitGlide {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translate3d(25px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+/* --- PAGE 3: PRODUCTS (3D Portfolio Deck Unfold & Perspective Tilt) --- */
+body.page-products > section:first-of-type {
+  animation: pageProductsEntrance 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+@keyframes pageProductsEntrance {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(4deg) translate3d(0, 36px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translate3d(0, 0, 0);
+  }
+}
+body.page-products .product-card {
+  animation: productsCardCascade 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes productsCardCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- PAGE 4: PARTNERS (Institutional Network Pulse & Horizon Bloom) --- */
+body.page-partners > section:first-of-type {
+  animation: pagePartnersEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+@keyframes pagePartnersEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.965) translate3d(0, 18px, 0);
+    box-shadow: 0 0 45px rgba(56, 189, 248, 0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    box-shadow: none;
+  }
+}
+body.page-partners .partner-card {
+  animation: partnerCardBloom 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes partnerCardBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- PAGE 5: CALCULATORS (Digital Financial Dashboard Elevator Lift) --- */
+body.page-calculators > section:first-of-type,
+body.page-calculators .calc-tab-content {
+  animation: pageCalculatorsEntrance 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+@keyframes pageCalculatorsEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 48px, 0) scale(0.985);
+  }
+  60% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* --- PAGE 6: WHY US (4-Pillar Diagonal Rise & Shield Lock) --- */
+body.page-why-us > section:first-of-type {
+  animation: pageWhyUsEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+@keyframes pageWhyUsEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(-24px, 32px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+body.page-why-us .feature-card {
+  animation: whyUsPillarsRise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes whyUsPillarsRise {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) rotate(-0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* --- PAGE 7: REVIEWS (Star Shimmer & Floating Testimonial Bloom) --- */
+body.page-reviews > section:first-of-type {
+  animation: pageReviewsEntrance 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+@keyframes pageReviewsEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translate3d(0, 18px, 0);
+    filter: blur(4px) brightness(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: blur(0px) brightness(1);
+  }
+}
+body.page-reviews .review-card {
+  animation: reviewsCardFloat 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes reviewsCardFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- PAGE 8: CONTACT (Direct Aperture Focus & Warm Glow Inward) --- */
+body.page-contact > section:first-of-type {
+  animation: pageContactEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+@keyframes pageContactEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(1.04) translate3d(0, -14px, 0);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: blur(0px);
+  }
+}
+body.page-contact form {
+  animation: contactFocusGlow 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+@keyframes contactFocusGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ============================================================ */
+/* REACT-BITS GRADIENTWAVES WEBGL COMPONENT STYLING             */
+/* ============================================================ */
+.gradient-waves-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.gradient-waves-container canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+/* ============================================================ */
+/* REACT-BITS BLURTEXT COMPONENT STYLING                        */
+/* Staggered blur & spring entrance motion                     */
+/* ============================================================ */
+.blur-text {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  isolation: isolate;
+  text-rendering: optimizeLegibility;
+}
+
+.blur-text-element {
+  display: inline-block;
+  will-change: transform, filter, opacity;
+  transform: translate3d(0, var(--blur-from-y, -50px), 0);
+  filter: blur(var(--blur-from-amount, 10px));
+  opacity: 0;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Natural word spacing */
+.blur-text-space {
+  display: inline;
+  white-space: pre;
+}
+
+.blur-text-letter {
+  letter-spacing: inherit;
+}
+
+/* Explicit line breaks across flex wrapper */
+.blur-text-break {
+  flex-basis: 100%;
+  width: 0;
+  height: 0;
+  display: block;
+}
+
+/* Cyan/Blue gradient support on individual words & containers */
+.blur-text-element.gradient-text-blue,
+.gradient-text-blue .blur-text-element {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Staggered Keyframe Animations matching React-Bits */
+@keyframes blurTextTop {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  50% {
+    filter: blur(5px);
+    opacity: 0.5;
+    transform: translate3d(0, 5px, 0);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes blurTextBottom {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  50% {
+    filter: blur(5px);
+    opacity: 0.5;
+    transform: translate3d(0, -5px, 0);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.blur-text.is-in-view .blur-text-element {
+  animation-name: blurTextTop;
+  animation-duration: var(--blur-duration, 0.7s);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--index, 0) * var(--blur-delay, 0.2s));
+}
+
+.blur-text[data-direction="bottom"].is-in-view .blur-text-element,
+.blur-text.direction-bottom.is-in-view .blur-text-element {
+  animation-name: blurTextBottom;
+}
+
+/* Post-animation crisp font rendering cleanup */
+.blur-text.is-completed .blur-text-element {
+  will-change: auto;
+  filter: none;
+  transform: none;
+  opacity: 1;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .blur-text .blur-text-element {
+    animation: none !important;
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+  }
+}
+
+/* ============================================================ */
+/* WARPTEXT INTERACTIVE WEBGL LIQUID WARP STYLING               */
+/* ============================================================ */
+.warp-text {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 160px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+.warp-text canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.warp-text canvas:active {
+  cursor: grabbing;
+}
+
+/* When WebGL initializes and renders, hide the fallback text accessibly */
+.warp-text.warp-text-ready .warp-text-fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Digital Grid / Dot Matrix Accent (matching the brand graphic) */
+.hero-dot-matrix {
+  position: absolute;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(rgba(147, 197, 253, 0.35) 1.5px, transparent 1.5px),
+    radial-gradient(rgba(56, 189, 248, 0.2) 1px, transparent 1px);
+  background-size: 16px 16px, 8px 8px;
+  mask-image: radial-gradient(circle at 75% 30%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 75% 30%, black 20%, transparent 80%);
+}
+
+/* ============================================================ */
+/* BORDER GLOW INTERACTIVE COMPONENT STYLING                   */
+/* ============================================================ */
+.border-glow-card {
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  --edge-sensitivity: 30;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+  --border-radius: 20px;
+  --glow-padding: 35px;
+  --cone-spread: 25;
+  --card-bg: #f8fbff;
+  --fill-opacity: 0.35;
+
+  position: relative;
+  border-radius: var(--border-radius);
+  isolation: isolate;
+  transform: translate3d(0, 0, 0.01px);
+  display: block;
+  border: 1px solid rgb(24 24 27 / 8%);
+  background: var(--card-bg, #f8fbff);
+  overflow: visible;
+  box-shadow:
+    rgba(37, 99, 235, 0.03) 0px 1px 2px,
+    rgba(14, 165, 233, 0.03) 0px 4px 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.border-glow-card--dark {
+  border-color: rgb(255 255 255 / 15%);
+  background: var(--card-bg, #120F17);
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 2px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px,
+    rgba(0, 0, 0, 0.1) 0px 4px 8px,
+    rgba(0, 0, 0, 0.1) 0px 8px 16px,
+    rgba(0, 0, 0, 0.1) 0px 16px 32px,
+    rgba(0, 0, 0, 0.1) 0px 32px 64px;
+}
+
+.border-glow-card--light {
+  border-color: rgb(24 24 27 / 10%);
+  background: var(--card-bg, #f8fbff);
+  box-shadow:
+    rgb(24 24 27 / 3%) 0 1px 2px,
+    rgb(37 99 235 / 4%) 0 4px 12px;
+}
+
+.border-glow-card--light::after,
+.border-glow-card--light > .edge-light {
+  mix-blend-mode: normal;
+}
+
+.border-glow-card::before,
+.border-glow-card::after,
+.border-glow-card > .edge-light {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: opacity 0.25s ease-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.border-glow-card:not(:hover):not(.sweep-active)::before,
+.border-glow-card:not(:hover):not(.sweep-active)::after,
+.border-glow-card:not(:hover):not(.sweep-active) > .edge-light {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+/* colored mesh-gradient border */
+.border-glow-card::before {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--card-bg, #f8fbff) 0 100%) padding-box,
+    linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,
+    var(--gradient-one, radial-gradient(at 80% 55%, #10b981 0px, transparent 50%)) border-box,
+    var(--gradient-two, radial-gradient(at 69% 34%, #34d399 0px, transparent 50%)) border-box,
+    var(--gradient-three, radial-gradient(at 8% 6%, #06b6d4 0px, transparent 50%)) border-box,
+    var(--gradient-four, radial-gradient(at 41% 38%, #10b981 0px, transparent 50%)) border-box,
+    var(--gradient-five, radial-gradient(at 86% 85%, #34d399 0px, transparent 50%)) border-box,
+    var(--gradient-six, radial-gradient(at 82% 18%, #06b6d4 0px, transparent 50%)) border-box,
+    var(--gradient-seven, radial-gradient(at 51% 4%, #34d399 0px, transparent 50%)) border-box,
+    var(--gradient-base, linear-gradient(#10b981 0 100%)) border-box;
+
+  opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+
+  -webkit-mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black calc(var(--cone-spread) * 1%),
+      transparent calc((var(--cone-spread) + 15) * 1%),
+      transparent calc((100 - var(--cone-spread) - 15) * 1%),
+      black calc((100 - var(--cone-spread)) * 1%)
+    );
+  mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black calc(var(--cone-spread) * 1%),
+      transparent calc((var(--cone-spread) + 15) * 1%),
+      transparent calc((100 - var(--cone-spread) - 15) * 1%),
+      black calc((100 - var(--cone-spread)) * 1%)
+    );
+}
+
+/* colored mesh-gradient background fill near edges */
+.border-glow-card::after {
+  border: 1.5px solid transparent;
+  background:
+    var(--gradient-one, radial-gradient(at 80% 55%, #10b981 0px, transparent 50%)) padding-box,
+    var(--gradient-two, radial-gradient(at 69% 34%, #34d399 0px, transparent 50%)) padding-box,
+    var(--gradient-three, radial-gradient(at 8% 6%, #06b6d4 0px, transparent 50%)) padding-box,
+    var(--gradient-four, radial-gradient(at 41% 38%, #10b981 0px, transparent 50%)) padding-box,
+    var(--gradient-five, radial-gradient(at 86% 85%, #34d399 0px, transparent 50%)) padding-box,
+    var(--gradient-six, radial-gradient(at 82% 18%, #06b6d4 0px, transparent 50%)) padding-box,
+    var(--gradient-seven, radial-gradient(at 51% 4%, #34d399 0px, transparent 50%)) padding-box,
+    var(--gradient-base, linear-gradient(#10b981 0 100%)) padding-box;
+
+  -webkit-mask-image:
+    linear-gradient(to bottom, black, black),
+    radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%),
+    conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+  mask-image:
+    linear-gradient(to bottom, black, black),
+    radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%),
+    conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+
+  -webkit-mask-composite: source-out, destination-over, destination-over, destination-over, destination-over, destination-over;
+  mask-composite: subtract, add, add, add, add, add;
+  opacity: calc(var(--fill-opacity, 0.4) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  mix-blend-mode: soft-light;
+}
+
+/* outer glow layer */
+.border-glow-card > .edge-light {
+  inset: calc(var(--glow-padding) * -1);
+  pointer-events: none;
+  z-index: 1;
+
+  -webkit-mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%
+    );
+  mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%
+    );
+
+  opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+  mix-blend-mode: plus-lighter;
+}
+
+.border-glow-card > .edge-light::before {
+  content: "";
+  position: absolute;
+  inset: var(--glow-padding);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1.5px var(--glow-color, hsl(158deg 85% 75% / 100%)),
+    inset 0 0 1px 0 var(--glow-color-60, hsl(158deg 85% 75% / 60%)),
+    inset 0 0 3px 0 var(--glow-color-50, hsl(158deg 85% 75% / 50%)),
+    inset 0 0 6px 0 var(--glow-color-40, hsl(158deg 85% 75% / 40%)),
+    inset 0 0 15px 0 var(--glow-color-30, hsl(158deg 85% 75% / 30%)),
+    inset 0 0 25px 2px var(--glow-color-20, hsl(158deg 85% 75% / 20%)),
+    inset 0 0 50px 2px var(--glow-color-10, hsl(158deg 85% 75% / 10%)),
+    0 0 1px 0 var(--glow-color-60, hsl(158deg 85% 75% / 60%)),
+    0 0 3px 0 var(--glow-color-50, hsl(158deg 85% 75% / 50%)),
+    0 0 6px 0 var(--glow-color-40, hsl(158deg 85% 75% / 40%)),
+    0 0 15px 0 var(--glow-color-30, hsl(158deg 85% 75% / 30%)),
+    0 0 25px 2px var(--glow-color-20, hsl(158deg 85% 75% / 20%)),
+    0 0 50px 2px var(--glow-color-10, hsl(158deg 85% 75% / 10%));
+}
+
+.border-glow-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* Product Name Glow Card Specific Layout */
+.product-title-glow {
+  padding: 0.6rem 0.95rem;
+  margin-bottom: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.product-title-glow:hover {
+  transform: translateY(-1px);
+}
+

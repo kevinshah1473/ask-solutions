@@ -1,0 +1,732 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Calculators (SIP, Lumpsum, Cover, Retirement) | ASK SOLUTIONS | Kevin Shah</title>
+  <meta name="description" content="Free Interactive Financial Calculators by ASK SOLUTIONS (Kevin Shah) - SIP Wealth Compounding, Lumpsum Growth, HLV Term Insurance Estimator, and Retirement Corpus Planner. Mumbai. Call +91 91377 82455.">
+  <meta name="keywords" content="SIP Calculator Mumbai, Lumpsum Calculator, Term Insurance Calculator, Retirement Corpus Calculator, Financial Planning Tools Kevin Shah, 9137782455">
+  <meta name="author" content="Kevin Shah - ASK SOLUTIONS">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+  <!-- Preconnect for Fast CDN & Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Financial Calculators | ASK SOLUTIONS">
+  <meta property="og:description" content="Calculate your SIP compounding, retirement corpus, and term cover needs with Kevin Shah.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#040e1f',
+              navyLight: '#0a1f42',
+              navyCard: '#0e2b5c',
+              blue: '#2563eb',
+              blueLight: '#3b82f6',
+              blueDark: '#1d4ed8',
+              blueDeep: '#1e40af',
+              cyan: '#0284c7',
+              cyanLight: '#38bdf8',
+              sky: '#0ea5e9',
+              skyLight: '#7dd3fc',
+              ice: '#e0f2fe',
+              slate: '#0f172a',
+              surface: '#f4f8fc'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Chart.js for Financial Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Luxury Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-calculators bg-brand-surface text-slate-800 antialiased selection:bg-brand-blue selection:text-white" data-page="calculators">
+
+  <!-- ============================================================ -->
+  <!-- TOP ANNOUNCEMENT & CONTACT BAR -->
+  <!-- ============================================================ -->
+  <div class="bg-gradient-to-r from-slate-950 via-brand-navy to-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-blue-900/30 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      
+      <!-- Locations, Status & Motto -->
+      <div class="flex items-center gap-3 flex-wrap justify-center md:justify-start">
+        <span class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-500/20 text-sky-300 font-bold border border-sky-400/30 text-[11px] shadow-sm">
+          <img src="assets/logo-icon.png" alt="ASK SOLUTIONS" class="w-3.5 h-3.5 object-contain">
+          Kevin Shah • Founder & Wealth Advisor
+        </span>
+        <span class="hidden sm:inline text-slate-700">|</span>
+        <span class="flex items-center gap-1.5 text-slate-300 font-medium">
+          <i class="fa-solid fa-location-dot text-sky-400 text-xs"></i> Goregaon (W), Mumbai
+        </span>
+      </div>
+
+      <!-- Phones, Email & Social -->
+      <div class="flex items-center gap-3.5 flex-wrap justify-center text-xs">
+        <a href="tel:+919137782455" class="text-white hover:text-sky-300 transition font-bold flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-sky-400 text-xs"></i> +91 91377 82455
+        </a>
+        <span class="text-slate-700 hidden sm:inline">|</span>
+        <a href="mailto:askforthesolution@gmail.com" class="hover:text-sky-300 transition hidden sm:flex items-center gap-1.5 text-slate-300 font-medium">
+          <i class="fa-solid fa-envelope text-sky-400 text-xs"></i> askforthesolution@gmail.com
+        </a>
+        <span class="text-slate-700 hidden sm:inline">|</span>
+        <a href="https://instagram.com/asksolutionsofficial" target="_blank" class="text-sky-400 hover:text-sky-300 transition flex items-center gap-1 font-semibold" title="Follow Kevin Shah on Instagram">
+          <i class="fa-brands fa-instagram text-sm"></i> <span class="hidden sm:inline">@asksolutionsofficial</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- HEADER & NAVIGATION -->
+  <!-- ============================================================ -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-blue-100 transition-all duration-300" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-22">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group py-1 flex-shrink-0" title="ASK SOLUTIONS - Home">
+          <img src="assets/logo.png" alt="ASK SOLUTIONS - Growing with you at every stage" class="h-13 sm:h-15 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm">
+        </a>
+
+                        <!-- Desktop Navigation Links (Strictly Single Line) -->
+        <nav class="hidden xl:flex items-center gap-2 2xl:gap-3 text-[13px] 2xl:text-[14px] font-bold text-slate-700 flex-nowrap flex-shrink-0">
+          <a href="index.html" class="px-3.5 2xl:px-4 py-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 transition whitespace-nowrap flex-shrink-0">Home</a>
+          <a href="about.html" class="px-3.5 2xl:px-4 py-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 transition whitespace-nowrap flex-shrink-0">About</a>
+          <a href="products.html" class="px-3.5 2xl:px-4 py-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 transition flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <span>Products</span>
+            <span class="text-[10px] font-black bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-full">11</span>
+          </a>
+          <a href="partners.html" class="px-3.5 2xl:px-4 py-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 transition whitespace-nowrap flex-shrink-0">Partners</a>
+        </nav>
+
+        <!-- Header CTA Buttons -->
+        <div class="hidden sm:flex items-center gap-3 flex-shrink-0">
+          <a href="contact.html" class="btn-shimmer px-5 py-2.5 rounded-xl text-white font-extrabold text-xs shadow-md shadow-blue-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-sky-200 text-xs"></i>
+            <span>Book Consultation</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex xl:hidden items-center gap-2">
+          <a href="tel:+919137782455" class="p-2.5 rounded-xl bg-blue-50 text-blue-600 text-base border border-blue-200 shadow-sm" title="Call Kevin Shah">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <button id="mobile-menu-btn" class="p-2.5 rounded-xl text-slate-700 hover:bg-blue-50 transition focus:outline-none border border-slate-200" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-nav" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="fixed right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+          <a href="index.html" class="mobile-nav-link">
+            <img src="assets/logo.png" alt="ASK SOLUTIONS" class="h-14 w-auto object-contain">
+          </a>
+          <button id="mobile-menu-close" class="p-2 text-slate-500 hover:text-slate-900">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
+        </div>
+
+                        <nav class="flex flex-col gap-2 text-sm font-bold text-slate-700">
+          <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2.5 rounded-xl flex items-center justify-between">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-house text-blue-600"></i>
+              <span>Home</span>
+            </span>
+            <i class="fa-solid fa-chevron-right text-xs text-blue-400"></i>
+          </a>
+
+          <!-- Combined Group: About & Trust -->
+          <div class="mt-1 pt-1 border-t border-slate-100">
+            <div class="px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+              About & Trust
+            </div>
+            <a href="about.html#founder" class="mobile-nav-link  hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2 rounded-xl flex items-center justify-between text-xs font-bold text-slate-700">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-user-tie text-blue-600"></i>
+                <span>About Kevin Shah</span>
+              </span>
+              <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+            </a>
+            <a href="about.html#why-us" class="mobile-nav-link hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2 rounded-xl flex items-center justify-between text-xs font-bold text-slate-700">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-indigo-500"></i>
+                <span>Why Choose Us</span>
+              </span>
+              <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+            </a>
+            <a href="about.html#reviews" class="mobile-nav-link hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2 rounded-xl flex items-center justify-between text-xs font-bold text-slate-700">
+              <span class="flex items-center gap-2">
+                <i class="fa-brands fa-google text-amber-500"></i>
+                <span class="flex items-center gap-1.5"><span>Client Reviews</span><span class="inline-flex items-center gap-0.5 text-[9px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full font-black"><i class="fa-solid fa-star text-[8px] text-amber-500"></i>5.0</span></span>
+              </span>
+              <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+            </a>
+            <a href="contact.html" class="mobile-nav-link hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2 rounded-xl flex items-center justify-between text-xs font-bold text-slate-700">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope-open-text text-sky-500"></i>
+                <span>Contact Details</span>
+              </span>
+              <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+            </a>
+          </div>
+
+          <a href="products.html" class="mobile-nav-link  hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2.5 rounded-xl flex items-center justify-between">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-shapes text-slate-400"></i>
+              <span>Products</span>
+            </span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-bold">11</span>
+          </a>
+          <a href="partners.html" class="mobile-nav-link  hover:text-blue-600 hover:bg-blue-50/50 transition px-3 py-2.5 rounded-xl flex items-center justify-between">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-handshake text-slate-400"></i>
+              <span>Our Channel Partners</span>
+            </span>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+          </a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-slate-100 flex flex-col gap-2.5">
+        <a href="assets/ASK_SOLUTIONS_Brochure.pdf" download="ASK_SOLUTIONS_Brochure.pdf" class="w-full text-center py-2.5 rounded-xl bg-blue-50 text-blue-900 font-bold text-xs flex items-center justify-center gap-2 border border-blue-200">
+          <i class="fa-solid fa-file-pdf text-blue-600"></i> Download Official Brochure
+        </a>
+        <a href="tel:+919137782455" class="w-full text-center py-2.5 rounded-xl bg-brand-navy text-white font-bold text-xs flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-sky-400"></i> Call +91 91377 82455
+        </a>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PAGE HERO BANNER -->
+  <!-- ============================================================ -->
+  <section class="relative overflow-hidden bg-mesh-dark text-white py-10 sm:py-14">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-brand-cyan/20 rounded-full blur-3xl pointer-events-none float-element"></div>
+    <div class="absolute bottom-5 right-10 w-72 h-72 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none float-element"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <span class="hero-animate-1 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-sky-300 font-bold border border-sky-400/30 text-xs mb-3 shadow-xs backdrop-blur-sm">
+        <img src="assets/logo-icon.png" alt="ASK SOLUTIONS" class="w-4 h-4 object-contain">
+        <span>Interactive Planning Suite</span>
+      </span>
+      <h1 class="hero-animate-2 font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+        Financial Calculators <span class="gradient-text-blue block sm:inline">Plan With Mathematical Clarity</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 4 CALCULATORS SUITE -->
+  <!-- ============================================================ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Calculator Tab Navigation -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+        <button class="calc-tab-btn px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all bg-blue-600 text-white shadow-md shadow-blue-500/20 flex items-center gap-2" data-tab="sip-calc">
+          <i class="fa-solid fa-chart-line text-sm"></i>
+          <span>SIP Compounding</span>
+        </button>
+        <button class="calc-tab-btn px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-2" data-tab="lump-calc">
+          <i class="fa-solid fa-sack-dollar text-sm"></i>
+          <span>Lumpsum Growth</span>
+        </button>
+        <button class="calc-tab-btn px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-2" data-tab="hlv-calc">
+          <i class="fa-solid fa-shield-halved text-sm"></i>
+          <span>Term Cover (HLV)</span>
+        </button>
+        <button class="calc-tab-btn px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-2" data-tab="retire-calc">
+          <i class="fa-solid fa-person-cane text-sm"></i>
+          <span>Retirement Corpus</span>
+        </button>
+      </div>
+
+      <!-- CALCULATOR 1: SIP CALCULATOR -->
+      <div id="sip-calc" class="calc-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Sliders Left (7 Cols) -->
+          <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Monthly Investment (₹)</label>
+                <span id="sip-amount-val" class="font-heading font-black text-blue-600 text-lg sm:text-xl">₹10,000</span>
+              </div>
+              <input type="range" id="sip-amount" min="500" max="200000" step="500" value="10000" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>₹500</span>
+                <span>₹1 Lakh</span>
+                <span>₹2 Lakh</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Expected Return Rate (% p.a.)</label>
+                <span id="sip-rate-val" class="font-heading font-black text-sky-600 text-lg sm:text-xl">12%</span>
+              </div>
+              <input type="range" id="sip-rate" min="5" max="25" step="0.5" value="12" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>5% (Conservative)</span>
+                <span>12% (Balanced)</span>
+                <span>25% (Aggressive)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Time Horizon (Years)</label>
+                <span id="sip-years-val" class="font-heading font-black text-indigo-600 text-lg sm:text-xl">15 Years</span>
+              </div>
+              <input type="range" id="sip-years" min="1" max="35" step="1" value="15" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>1 Year</span>
+                <span>15 Years</span>
+                <span>35 Years</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Card Right (5 Cols) -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white p-7 sm:p-9 rounded-3xl border border-blue-900 shadow-2xl space-y-6">
+            <h3 class="font-heading font-extrabold text-lg text-white border-b border-slate-800 pb-3">Projected Maturity Valuation</h3>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Total Invested Amount:</span>
+                <span id="sip-invested" class="font-bold text-white text-base">₹18,00,000</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Estimated Wealth Gain:</span>
+                <span id="sip-gain" class="font-bold text-sky-400 text-base">₹32,45,760</span>
+              </div>
+              <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                <span class="font-bold text-slate-200">Expected Total Value:</span>
+                <span id="sip-total" class="font-heading font-black text-2xl text-sky-300">₹50,45,760</span>
+              </div>
+            </div>
+
+            <div class="w-48 h-48 mx-auto relative pt-2">
+              <canvas id="sip-chart"></canvas>
+            </div>
+
+            <button class="open-consultation-modal w-full py-3.5 rounded-xl btn-shimmer text-white font-extrabold text-xs shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2" data-service="Mutual Fund / S.I.P">
+              <i class="fa-solid fa-calendar-check text-base"></i>
+              <span>Start This SIP With Kevin Shah</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR 2: LUMPSUM CALCULATOR -->
+      <div id="lump-calc" class="calc-panel hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Total Lumpsum Investment (₹)</label>
+                <span id="lump-amount-val" class="font-heading font-black text-blue-600 text-lg sm:text-xl">₹5,00,000</span>
+              </div>
+              <input type="range" id="lump-amount" min="10000" max="5000000" step="10000" value="500000" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>₹10,000</span>
+                <span>₹25 Lakh</span>
+                <span>₹50 Lakh</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Expected Return Rate (% p.a.)</label>
+                <span id="lump-rate-val" class="font-heading font-black text-sky-600 text-lg sm:text-xl">12%</span>
+              </div>
+              <input type="range" id="lump-rate" min="5" max="25" step="0.5" value="12" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>5%</span>
+                <span>12%</span>
+                <span>25%</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Time Horizon (Years)</label>
+                <span id="lump-years-val" class="font-heading font-black text-indigo-600 text-lg sm:text-xl">10 Years</span>
+              </div>
+              <input type="range" id="lump-years" min="1" max="30" step="1" value="10" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>1 Year</span>
+                <span>10 Years</span>
+                <span>30 Years</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white p-7 sm:p-9 rounded-3xl border border-blue-900 shadow-2xl space-y-6">
+            <h3 class="font-heading font-extrabold text-lg text-white border-b border-slate-800 pb-3">Projected Lumpsum Growth</h3>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Initial Principal:</span>
+                <span id="lump-invested" class="font-bold text-white text-base">₹5,00,000</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Estimated Capital Gain:</span>
+                <span id="lump-gain" class="font-bold text-sky-400 text-base">₹10,52,924</span>
+              </div>
+              <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                <span class="font-bold text-slate-200">Expected Total Maturity:</span>
+                <span id="lump-total" class="font-heading font-black text-2xl text-sky-300">₹15,52,924</span>
+              </div>
+            </div>
+
+            <div class="w-48 h-48 mx-auto relative pt-2">
+              <canvas id="lump-chart"></canvas>
+            </div>
+
+            <button class="open-consultation-modal w-full py-3.5 rounded-xl btn-shimmer text-white font-extrabold text-xs shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2" data-service="Mutual Fund / S.I.P">
+              <i class="fa-solid fa-calendar-check text-base"></i>
+              <span>Deploy Lumpsum With Kevin Shah</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR 3: HUMAN LIFE VALUE (TERM COVER) -->
+      <div id="hlv-calc" class="calc-panel hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Annual Income (₹)</label>
+                <span id="hlv-income-val" class="font-heading font-black text-blue-600 text-lg sm:text-xl">₹12,00,000</span>
+              </div>
+              <input type="range" id="hlv-income" min="300000" max="10000000" step="100000" value="1200000" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold">
+                <span>₹3 Lakh</span>
+                <span>₹50 Lakh</span>
+                <span>₹1 Crore</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Current Age (Years)</label>
+                <span id="hlv-age-val" class="font-heading font-black text-sky-600 text-lg sm:text-xl">32 Years</span>
+              </div>
+              <input type="range" id="hlv-age" min="18" max="60" step="1" value="32" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Existing Loans & Liabilities (₹)</label>
+                <span id="hlv-loans-val" class="font-heading font-black text-indigo-600 text-lg sm:text-xl">₹30,00,000</span>
+              </div>
+              <input type="range" id="hlv-loans" min="0" max="20000000" step="500000" value="3000000" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white p-7 sm:p-9 rounded-3xl border border-blue-900 shadow-2xl space-y-6">
+            <h3 class="font-heading font-extrabold text-lg text-white border-b border-slate-800 pb-3">Recommended Term Cover</h3>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Income Replacement Cover (15x):</span>
+                <span id="hlv-income-rep" class="font-bold text-white text-base">₹1.80 Cr</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Debt & Liability Protection:</span>
+                <span id="hlv-debt-rep" class="font-bold text-sky-400 text-base">₹30.00 Lakh</span>
+              </div>
+              <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                <span class="font-bold text-slate-200">Recommended Sum Assured:</span>
+                <span id="hlv-total" class="font-heading font-black text-2xl text-sky-300">₹2.10 Cr</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Standard financial underwriting recommends minimum 15x to 20x annual income plus outstanding liabilities to safeguard family dependents.
+            </p>
+
+            <button class="open-consultation-modal w-full py-3.5 rounded-xl btn-shimmer text-white font-extrabold text-xs shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2" data-service="Term Insurance">
+              <i class="fa-solid fa-calendar-check text-base"></i>
+              <span>Get Term Plan Quotes With Kevin Shah</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CALCULATOR 4: RETIREMENT CORPUS PLANNER -->
+      <div id="retire-calc" class="calc-panel hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Current Monthly Living Expenses (₹)</label>
+                <span id="retire-exp-val" class="font-heading font-black text-blue-600 text-lg sm:text-xl">₹50,000</span>
+              </div>
+              <input type="range" id="retire-exp" min="15000" max="500000" step="5000" value="50000" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-extrabold text-slate-700 uppercase tracking-wider block mb-1">Current Age</label>
+                <input type="number" id="retire-curr-age" value="30" min="18" max="70" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-bold text-slate-800">
+              </div>
+              <div>
+                <label class="text-xs font-extrabold text-slate-700 uppercase tracking-wider block mb-1">Retirement Age</label>
+                <input type="number" id="retire-target-age" value="60" min="40" max="80" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-bold text-slate-800">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs sm:text-sm font-extrabold text-slate-700 uppercase tracking-wider">Assumed Inflation Rate (% p.a.)</label>
+                <span id="retire-inf-val" class="font-heading font-black text-indigo-600 text-lg sm:text-xl">6%</span>
+              </div>
+              <input type="range" id="retire-inf" min="4" max="10" step="0.5" value="6" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white p-7 sm:p-9 rounded-3xl border border-blue-900 shadow-2xl space-y-6">
+            <h3 class="font-heading font-extrabold text-lg text-white border-b border-slate-800 pb-3">Inflation-Adjusted Target Corpus</h3>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Monthly Expense at Age 60:</span>
+                <span id="retire-future-exp" class="font-bold text-white text-base">₹2.87 Lakh/mo</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-slate-400">Years to Accumulate:</span>
+                <span id="retire-accum-years" class="font-bold text-sky-400 text-base">30 Years</span>
+              </div>
+              <div class="flex justify-between items-center pt-3 border-t border-slate-800">
+                <span class="font-bold text-slate-200">Required Target Corpus:</span>
+                <span id="retire-total" class="font-heading font-black text-2xl text-sky-300">₹6.89 Cr</span>
+              </div>
+            </div>
+
+            <button class="open-consultation-modal w-full py-3.5 rounded-xl btn-shimmer text-white font-extrabold text-xs shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2" data-service="Retirement Planning">
+              <i class="fa-solid fa-calendar-check text-base"></i>
+              <span>Build Retirement Roadmap</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CTA CALLOUT -->
+  <!-- ============================================================ -->
+  <section class="py-16 bg-gradient-to-r from-slate-950 via-brand-navy to-slate-950 text-white border-t border-blue-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-black text-2xl sm:text-4xl text-white mb-4">
+        Need a Tailored Financial Plan For Your Family?
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+        Kevin Shah helps you convert these projections into actual actionable investment schemes and insurance policies.
+      </p>
+      <div class="flex items-center justify-center">
+        <button class="open-consultation-modal btn-shimmer px-8 py-4 rounded-xl text-white font-extrabold text-sm shadow-xl shadow-blue-500/30 flex items-center gap-2" data-service="Comprehensive Portfolio Review">
+          <i class="fa-solid fa-calendar-check text-sky-200"></i>
+          <span>Book Free Consultation</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+    <!-- ============================================================ -->
+  <!-- FOOTER (WHITE LUXURY THEME) -->
+  <!-- ============================================================ -->
+    <!-- ============================================================ -->
+  <!-- FOOTER (WHITE LUXURY THEME) -->
+  <!-- ============================================================ -->
+  <footer class="bg-white text-slate-600 text-xs sm:text-sm pt-14 pb-10 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-slate-200">
+        
+        <!-- Brand Summary (4 cols) -->
+        <div class="lg:col-span-4 space-y-3.5">
+          <a href="index.html" class="inline-block">
+            <img src="assets/logo.png" alt="ASK SOLUTIONS" class="h-12 w-auto object-contain">
+          </a>
+          <div class="space-y-1.5 text-xs pt-1">
+            <p><a href="tel:+919137782455" class="flex items-center gap-2 text-slate-900 font-bold hover:text-blue-600 transition"><i class="fa-solid fa-phone text-blue-600 w-4"></i> <span>+91 91377 82455</span></a></p>
+            <p><a href="mailto:askforthesolution@gmail.com" class="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition"><i class="fa-solid fa-envelope text-blue-600 w-4"></i> <span>askforthesolution@gmail.com</span></a></p>
+            <p><a href="https://instagram.com/asksolutionsofficial" target="_blank" class="flex items-center gap-2 text-pink-600 font-medium hover:underline transition"><i class="fa-brands fa-instagram text-pink-600 w-4"></i> <span>@asksolutionsofficial</span></a></p>
+          </div>
+        </div>
+
+        <!-- Quick Navigation (4 cols) -->
+        <div class="lg:col-span-4 space-y-2.5">
+          <h4 class="font-heading font-extrabold text-brand-navy text-xs uppercase tracking-wider mb-3">Quick Navigation</h4>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-2 text-xs">
+            <a href="index.html" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-house text-blue-600 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Home</span></a>
+            <a href="about.html#founder" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-user-tie text-blue-600 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>About Kevin Shah</span></a>
+            <a href="products.html" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-shapes text-indigo-500 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Products (11)</span></a>
+            <a href="partners.html" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-handshake text-sky-500 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Channel Partners</span></a>
+            <a href="about.html#why-us" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-shield-halved text-indigo-600 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Why Choose Us</span></a>
+            <a href="about.html#reviews" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-star text-amber-500 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Client Reviews</span></a>
+            <a href="contact.html" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-location-dot text-rose-500 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Contact & Office</span></a>
+            <a href="calculators.html" class="flex items-center gap-1.5 text-slate-600 hover:text-blue-600 transition group"><i class="fa-solid fa-calculator text-emerald-600 text-[11px] w-3.5 group-hover:scale-110 transition"></i><span>Calculators</span></a>
+          </div>
+        </div>
+
+        <!-- Office Location (4 cols) -->
+        <div class="lg:col-span-4 space-y-3">
+          <h4 class="font-heading font-extrabold text-brand-navy text-xs uppercase tracking-wider mb-3">Office Location</h4>
+          <div class="space-y-2.5 text-xs text-slate-600">
+            <p class="flex items-start gap-2">
+              <i class="fa-solid fa-building-columns text-blue-600 text-xs mt-0.5 w-4 flex-shrink-0"></i>
+              <span><strong class="text-slate-900">ASK SOLUTIONS (Head Office):</strong><br>1st floor, Ask Solutions, Washington Plaza, f9, behind Ratna Hotel, Goregaon West, Mumbai, Maharashtra 400104</span>
+            </p>
+            <p class="text-[11px] text-slate-500 flex items-center gap-2">
+              <i class="fa-solid fa-clock text-blue-600 text-xs w-4 flex-shrink-0"></i>
+              <span>Mon - Sat: 10:30 AM - 7:00 PM</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+        <div>&copy; <script>document.write(new Date().getFullYear())</script> <strong class="text-slate-700">ASK SOLUTIONS</strong> (Kevin Shah). All Rights Reserved.</div>
+        <div class="text-center md:text-right text-[11px] text-slate-500 max-w-xl">
+          Disclaimer: Mutual Fund investments are subject to market risks, read all scheme related documents carefully. Insurance is the subject matter of solicitation.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CALL & WHATSAPP BUTTONS -->
+  <div class="fab-call lg:hidden">
+    <a href="tel:+919137782455" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 text-white shadow-2xl flex items-center justify-center text-xl border-2 border-blue-400 active:scale-95 transition" aria-label="Call Kevin Shah">
+      <i class="fa-solid fa-phone text-white"></i>
+    </a>
+  </div>
+
+  <div class="fab-container">
+    <a href="https://wa.me/919137782455?text=Hello%20Kevin%20Shah,%20I%20would%20like%20to%20consult%20ASK%20SOLUTIONS." target="_blank" class="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center text-2xl pulse-whatsapp transition transform hover:scale-110" aria-label="Chat with Kevin Shah">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- CONSULTATION MODAL -->
+  <div id="consultation-modal" class="modal-overlay fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="modal-box bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative max-h-[90vh] overflow-y-auto">
+      <button class="close-consultation-modal absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/logo.png" alt="ASK SOLUTIONS" class="h-10 w-auto object-contain">
+      </div>
+      <div class="mb-4 pb-3 border-b border-slate-100">
+        <h3 class="font-heading font-extrabold text-xl text-brand-navy">Book Free Consultation</h3>
+        <p class="text-xs text-slate-500">Kevin Shah, Founder • Goregaon (W), Mumbai</p>
+      </div>
+
+      <form id="consultation-modal-form" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name *</label>
+          <input type="text" id="modal-name" required placeholder="e.g. Rahul Deshmukh" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mobile / WhatsApp Number *</label>
+          <input type="tel" id="modal-phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Product We Serve *</label>
+          <select id="modal-service-select" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-xs sm:text-sm focus:outline-none focus:border-blue-500">
+            <option value="Mutual Fund / S.I.P">Mutual Fund / S.I.P</option>
+            <option value="Health Insurance">Health Insurance</option>
+            <option value="Life Insurance">Life Insurance</option>
+            <option value="Term Insurance">Term Insurance</option>
+            <option value="Fire Insurance">Fire Insurance</option>
+            <option value="Transit Insurance">Transit Insurance</option>
+            <option value="Engineering Insurance">Engineering Insurance</option>
+            <option value="Personal Accident Insurance">Personal Accident Insurance</option>
+            <option value="Motor Insurance">Motor Insurance</option>
+            <option value="Travel Insurance">Travel Insurance</option>
+            <option value="Cyber Security Insurance">Cyber Security Insurance</option>
+            <option value="Comprehensive Portfolio Review">360° Financial Portfolio Review</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Location / Area</label>
+            <input type="text" id="modal-location" value="Goregaon (W)" placeholder="Goregaon / Mumbai / Other" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm focus:outline-none focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mode</label>
+            <select id="modal-mode" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:border-blue-500">
+              <option value="WhatsApp / Call">WhatsApp / Call</option>
+              <option value="Goregaon (W) Office">Goregaon (W) Office</option>
+              <option value="Doorstep Visit (Mumbai)">Doorstep Visit</option>
+            </select>
+          </div>
+        </div>
+        <div class="p-3 bg-blue-50 border border-blue-100 rounded-xl text-xs text-blue-900 flex items-center justify-between">
+          <span><i class="fa-solid fa-phone text-blue-600 mr-1"></i> Helpline:</span>
+          <strong>+91 91377 82455</strong>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl btn-shimmer text-white font-extrabold text-sm shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane text-base"></i>
+          <span>Submit Consultation Request</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
