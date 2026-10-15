@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 130" width="100%" height="100%">
+  <defs>
+    <!-- Smooth curves for the 3 dynamic arcs -->
+  </defs>
+
+  <!-- Group: Emblem Icon -->
+  <g transform="translate(10, 5)">
+    <!-- Outer Dark Grey / Charcoal Arc -->
+    <path d="M 60,118 C 25,118 0,90 0,56 C 0,38 8,22 22,10 C 20,20 22,34 30,46 C 22,54 18,64 18,74 C 18,94 36,108 58,106 C 68,105 76,100 82,93 C 76,108 69,118 60,118 Z" fill="#2B2D42" />
+    
+    <!-- Middle Cyan Blue Arc -->
+    <path d="M 78,110 C 50,118 20,102 14,72 C 10,54 16,36 28,22 C 38,10 52,2 68,0 C 54,6 42,16 36,30 C 28,48 34,70 50,84 C 64,96 82,98 96,90 C 90,99 85,106 78,110 Z" fill="#00A0E9" />
+    
+    <!-- Inner Vibrant Orange Arc -->
+    <path d="M 88,85 C 64,102 34,88 30,62 C 26,42 38,24 56,16 C 68,10 82,10 94,16 C 78,16 64,26 56,40 C 48,54 52,70 66,78 C 76,84 86,84 94,78 C 92,81 90,83 88,85 Z" fill="#F37021" />
+  </g>
+
+  <!-- Group: Typography -->
+  <g transform="translate(130, 20)">
+    <!-- Brand Name: ASK SOLUTIONS -->
+    <text x="0" y="44" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="40" font-weight="900" letter-spacing="1.5" fill="#111827">
+      ASK <tspan fill="#111827">SOLUTIONS</tspan>
+    </text>
+    
+    <!-- Tagline: Growing with you at every stage -->
+    <text x="2" y="78" font-family="'Plus Jakarta Sans', 'Outfit', 'Segoe UI', sans-serif" font-size="20.5" font-weight="500" letter-spacing="0.2" fill="#2B2D42">
+      Growing with you at every stage
+    </text>
+  </g>
+</svg>
