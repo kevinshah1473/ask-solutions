@@ -1,0 +1,16 @@
+{
+  "name": "ask-solutions",
+  "version": "1.0.0",
+  "description": "ASK SOLUTIONS - Financial Products & Wealth Advisory Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ask-solutions",
+    "financial-advisory",
+    "wealth-management"
+  ],
+  "author": "Kevin Shah",
+  "license": "ISC"
+}
