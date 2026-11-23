@@ -717,6 +717,7 @@ function initStatsCounter() {
     counters.forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target')) || 0;
       const isDecimal = counter.getAttribute('data-decimal') === 'true' || target % 1 !== 0;
+      const decimals = counter.getAttribute('data-decimals') ? parseInt(counter.getAttribute('data-decimals')) : (String(target).split('.')[1] || '').length || (isDecimal ? 1 : 0);
       const prefix = counter.getAttribute('data-prefix') || '';
       const suffix = counter.getAttribute('data-suffix') || '';
       const duration = 1500;
@@ -728,10 +729,10 @@ function initStatsCounter() {
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-          counter.textContent = prefix + (isDecimal ? target.toFixed(1) : target.toLocaleString('en-IN')) + suffix;
+          counter.textContent = prefix + (isDecimal ? target.toFixed(decimals) : target.toLocaleString('en-IN')) + suffix;
           clearInterval(timer);
         } else {
-          counter.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.floor(current).toLocaleString('en-IN')) + suffix;
+          counter.textContent = prefix + (isDecimal ? current.toFixed(decimals) : Math.floor(current).toLocaleString('en-IN')) + suffix;
         }
       }, stepTime);
     });
