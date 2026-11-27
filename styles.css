@@ -1336,3 +1336,109 @@ body.page-contact form {
   transform: translateY(-1px);
 }
 
+/* ============================================================ */
+/* REACT BITS - SHINY TEXT (SHIMMER TEXT EFFECT)               */
+/* ============================================================ */
+@keyframes shiny-sweep {
+  0% {
+    background-position: 140% 0;
+  }
+  100% {
+    background-position: -140% 0;
+  }
+}
+
+@keyframes shiny-pill-sweep {
+  0% {
+    left: -150%;
+  }
+  30%, 100% {
+    left: 150%;
+  }
+}
+
+/* Light / White Shimmer (for Dark Navy Backgrounds & Hero Subtitle) */
+.shiny-text {
+  color: #e0f2fe;
+  background: linear-gradient(
+    120deg,
+    rgba(186, 230, 253, 0.85) 0%,
+    rgba(186, 230, 253, 0.85) 30%,
+    #ffffff 50%,
+    rgba(186, 230, 253, 0.85) 70%,
+    rgba(186, 230, 253, 0.85) 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: shiny-sweep 4s linear infinite;
+  will-change: background-position;
+}
+
+/* Gold / Amber Shimmer (for ★ 5.0 Google Rated) */
+.shiny-text-gold {
+  color: #d97706;
+  background: linear-gradient(
+    120deg,
+    #d97706 0%,
+    #d97706 30%,
+    #fef08a 50%,
+    #d97706 70%,
+    #d97706 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: shiny-sweep 3.5s linear infinite;
+  will-change: background-position;
+}
+
+/* Cyan / Blue Shimmer (for Light Backgrounds: Settlement Ratio & Families Served) */
+.shiny-text-blue {
+  color: #0284c7;
+  background: linear-gradient(
+    120deg,
+    #0284c7 0%,
+    #0284c7 30%,
+    #e0f2fe 50%,
+    #0284c7 70%,
+    #0284c7 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: shiny-sweep 3.5s linear infinite;
+  will-change: background-position;
+}
+
+/* Shimmer Pill Badge Wrapper */
+.shiny-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shiny-pill-sweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+
